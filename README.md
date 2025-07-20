@@ -169,7 +169,7 @@ If you use this code or build upon our work:
 
 **Author**: David H. Friedel Jr.  
 **Organization**: MarketAlly LLC (USA) & MarketAlly Pte. Ltd. (Singapore)  
-**Email**: dfriedel@marketally.com
+**Email**: dfriedel@marketally.ai
 
 ## License
 
