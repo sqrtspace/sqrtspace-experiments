@@ -1,0 +1,35 @@
+{
+  "database_size_mb": 23.95703125,
+  "page_count": 6133,
+  "num_users": 25000,
+  "cache_configs": [
+    {
+      "label": "O(n) Full Cache",
+      "cache_pages": 6133,
+      "cache_mb": 23.95703125,
+      "avg_lookup_ms": 0.005510330200195313,
+      "slowdown": 1.0
+    },
+    {
+      "label": "O(\u221an) Cache",
+      "cache_pages": 78,
+      "cache_mb": 0.3046875,
+      "avg_lookup_ms": 0.005288600921630859,
+      "slowdown": 0.959761163032191
+    },
+    {
+      "label": "O(log n) Cache",
+      "cache_pages": 12,
+      "cache_mb": 0.046875,
+      "avg_lookup_ms": 0.005537509918212891,
+      "slowdown": 1.0049325025960538
+    },
+    {
+      "label": "O(1) Minimal",
+      "cache_pages": 5,
+      "cache_mb": 0.01953125,
+      "avg_lookup_ms": 0.005275726318359374,
+      "slowdown": 0.95742471443406
+    }
+  ]
+}

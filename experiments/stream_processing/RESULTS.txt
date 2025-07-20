@@ -1,0 +1,48 @@
+=== Stream Processing: Sliding Window Average ===
+
+Computing average over sliding windows of streaming data
+
+
+Stream size: 10,000, Window size: 100
+  Full storage (O(n) space):
+    Time: 0.0048s, Memory: 78.1 KB
+  Sliding window (O(w) space):
+    Time: 0.0015s, Memory: 0.8 KB
+    Speedup: 3.13x, Memory reduction: 100.0x
+  Checkpoint (O(√n) space):
+    Time: 0.0122s, Memory: 78.1 KB
+    vs Full: 2.56x time, 1.0x less memory
+  Recompute all (O(1) space):
+    Time: 0.0040s, Memory: 8.0 bytes
+    vs Full: 0.8x slower
+
+Stream size: 50,000, Window size: 500
+  Full storage (O(n) space):
+    Time: 0.0796s, Memory: 390.6 KB
+  Sliding window (O(w) space):
+    Time: 0.0047s, Memory: 3.9 KB
+    Speedup: 16.79x, Memory reduction: 100.0x
+  Checkpoint (O(√n) space):
+    Time: 0.1482s, Memory: 878.9 KB
+    vs Full: 1.86x time, 0.4x less memory
+
+Stream size: 100,000, Window size: 1000
+  Full storage (O(n) space):
+    Time: 0.3306s, Memory: 781.2 KB
+  Sliding window (O(w) space):
+    Time: 0.0110s, Memory: 7.8 KB
+    Speedup: 30.00x, Memory reduction: 100.0x
+  Checkpoint (O(√n) space):
+    Time: 0.5781s, Memory: 2476.6 KB
+    vs Full: 1.75x time, 0.3x less memory
+
+=== Analysis ===
+Key observations:
+1. Sliding window (O(w) space) is FASTER than full storage!
+   - Better cache locality
+   - No need to maintain huge arrays
+2. This is a case where space reduction improves performance
+3. Real streaming systems use exactly this approach
+
+This demonstrates that space-time tradeoffs can be beneficial,
+not just theoretical curiosities!

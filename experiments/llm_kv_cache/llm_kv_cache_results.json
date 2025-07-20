@@ -1,0 +1,87 @@
+{
+  "model_config": {
+    "hidden_dim": 768,
+    "num_heads": 12,
+    "head_dim": 64
+  },
+  "results": {
+    "512": [
+      {
+        "label": "Full O(n)",
+        "cache_size": 512,
+        "avg_token_time": 0.0014609239995479583,
+        "tokens_per_second": 684.5087547484942,
+        "max_memory_mb": 2.994140625,
+        "total_recomputes": 0.0
+      },
+      {
+        "label": "Flash O(\u221an)",
+        "cache_size": 90,
+        "avg_token_time": 0.0004420524463057518,
+        "tokens_per_second": 2263.2109836224,
+        "max_memory_mb": 0.52734375,
+        "total_recomputes": 75136.0
+      },
+      {
+        "label": "Minimal O(1)",
+        "cache_size": 8,
+        "avg_token_time": 0.0002111002802848816,
+        "tokens_per_second": 4739.443599651373,
+        "max_memory_mb": 0.046875,
+        "total_recomputes": 96128.0
+      }
+    ],
+    "1024": [
+      {
+        "label": "Full O(n)",
+        "cache_size": 1024,
+        "avg_token_time": 0.0027254623360931872,
+        "tokens_per_second": 366.91164878423155,
+        "max_memory_mb": 5.994140625,
+        "total_recomputes": 0.0
+      },
+      {
+        "label": "Flash O(\u221an)",
+        "cache_size": 128,
+        "avg_token_time": 0.0006042216904461384,
+        "tokens_per_second": 1655.0428253903872,
+        "max_memory_mb": 0.75,
+        "total_recomputes": 327424.0
+      },
+      {
+        "label": "Minimal O(1)",
+        "cache_size": 8,
+        "avg_token_time": 0.00022929944097995758,
+        "tokens_per_second": 4373.89985252146,
+        "max_memory_mb": 0.046875,
+        "total_recomputes": 388864.0
+      }
+    ],
+    "2048": [
+      {
+        "label": "Full O(n)",
+        "cache_size": 2048,
+        "avg_token_time": 0.005077033815905452,
+        "tokens_per_second": 197.0929691857751,
+        "max_memory_mb": 11.994140625,
+        "total_recomputes": 0.0
+      },
+      {
+        "label": "Flash O(\u221an)",
+        "cache_size": 181,
+        "avg_token_time": 0.0007414041552692652,
+        "tokens_per_second": 1348.82682858517,
+        "max_memory_mb": 1.060546875,
+        "total_recomputes": 1387008.0
+      },
+      {
+        "label": "Minimal O(1)",
+        "cache_size": 8,
+        "avg_token_time": 0.0002398564014583826,
+        "tokens_per_second": 4169.296047863895,
+        "max_memory_mb": 0.046875,
+        "total_recomputes": 1564160.0
+      }
+    ]
+  }
+}

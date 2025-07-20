@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-07-18T10:01:20.536071",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "processor": "arm",
+  "python_version": "3.12.7",
+  "cpu_count": 16,
+  "cpu_count_logical": 16,
+  "memory_total": 68719476736,
+  "memory_available": 47656845312,
+  "disk_usage": 1.1,
+  "cpu_freq_current": 4,
+  "cpu_freq_max": 4,
+  "l1_cache": 131072,
+  "l2_cache": 4194304
+}

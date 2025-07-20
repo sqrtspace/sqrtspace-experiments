@@ -1,0 +1,30 @@
+{
+  "scale_factor": 50000,
+  "db_size_mb": 150.4765625,
+  "results": [
+    {
+      "label": "O(n) Full",
+      "cache_mb": 78.125,
+      "avg_random_ms": 0.0666189193725586,
+      "slowdown": 1.0
+    },
+    {
+      "label": "O(\u221an)",
+      "cache_mb": 1.078125,
+      "avg_random_ms": 0.015039443969726562,
+      "slowdown": 0.2257533462171641
+    },
+    {
+      "label": "O(log n)",
+      "cache_mb": 0.109375,
+      "avg_random_ms": 0.049996376037597656,
+      "slowdown": 0.7504831436547132
+    },
+    {
+      "label": "O(1)",
+      "cache_mb": 0.078125,
+      "avg_random_ms": 0.05035400390625,
+      "slowdown": 0.7558514064848614
+    }
+  ]
+}
