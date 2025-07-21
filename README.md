@@ -10,16 +10,15 @@ This repository contains the experimental code, case studies, and interactive da
 
 This project demonstrates how theoretical space-time tradeoffs manifest in real-world systems through:
 - **Controlled experiments** validating the √n relationship
-- **Production system analysis** (PostgreSQL, Flash Attention, MapReduce)
 - **Interactive visualizations** exploring memory hierarchies
-- **Practical tools** for optimizing space-time tradeoffs
+- **Practical implementations** in production-ready libraries
 
 ## Key Findings
 
 - Theory predicts √n slowdown, practice shows 100-10,000× due to constant factors
 - Memory hierarchy (L1/L2/L3/RAM/Disk) dominates performance
 - Cache-friendly algorithms can be faster with less memory
-- The √n pattern appears everywhere: database buffers, ML checkpointing, distributed systems
+- The √n pattern appears in our experimental implementations
 
 ## Experiments
 
@@ -59,22 +58,18 @@ cd experiments/stream_processing
 python sliding_window.py
 ```
 
-## Case Studies
+### 4. Real LLM Inference with Ollama (Python)
+**Location:** `experiments/llm_ollama/`
 
-### Database Systems (`case_studies/database_systems.md`)
-- PostgreSQL buffer pool sizing follows √(database_size)
-- Query optimizer chooses algorithms based on available memory
-- Hash joins (fast) vs nested loops (slow) show 200× performance difference
+Demonstrates space-time tradeoffs with actual language models:
+- Context chunking: 18.3× slowdown for √n chunks
+- Streaming generation: 6% overhead vs full generation
+- Checkpointing: 7.6% overhead for fault tolerance
 
-### Large Language Models (`case_studies/llm_transformers.md`)
-- Flash Attention: O(n²) → O(n) memory for 10× longer contexts
-- Gradient checkpointing: √n layers stored
-- Quantization: 8× memory reduction for 2-3× slowdown
-
-### Distributed Computing (`case_studies/distributed_computing.md`)
-- MapReduce: Optimal shuffle buffer = √(data_per_node)
-- Spark: Memory fraction settings control space-time tradeoffs
-- Hierarchical aggregation naturally forms √n levels
+```bash
+cd experiments/llm_ollama
+python ollama_spacetime_experiment.py
+```
 
 ## Quick Start
 
@@ -111,14 +106,9 @@ cd experiments/stream_processing && python sliding_window.py && cd ../..
 │   ├── maze_solver/      # C# graph traversal with memory limits
 │   ├── checkpointed_sorting/  # Python external sorting
 │   └── stream_processing/     # Python sliding window vs full storage
-├── case_studies/         # Analysis of production systems
-│   ├── database_systems.md
-│   ├── llm_transformers.md
-│   └── distributed_computing.md
 ├── dashboard/            # Interactive Streamlit visualizations
 │   └── app.py           # 6-page interactive dashboard
-├── SUMMARY.md           # Comprehensive findings
-└── FINDINGS.md          # Experimental results analysis
+└── FINDINGS.md          # Verified experimental results
 ```
 
 ## Interactive Dashboard
@@ -128,7 +118,7 @@ The dashboard (`dashboard/app.py`) includes:
 2. **Memory Hierarchy Simulator**: Visualize cache effects
 3. **Algorithm Comparisons**: See tradeoffs in action
 4. **LLM Optimizations**: Flash Attention demonstrations
-5. **Production Examples**: Real-world case studies
+5. **Implementation Examples**: Library demonstrations
 
 ## Measurement Framework
 
@@ -146,13 +136,7 @@ The dashboard (`dashboard/app.py`) includes:
 3. Use `measurement_framework.py` for profiling
 4. Document findings in experiment README
 
-### Contributing Case Studies
-1. Analyze a system with space-time tradeoffs
-2. Document the √n patterns you find
-3. Add to `case_studies/` folder
-4. Submit pull request
-
-## Citation
+## 📚 Citation
 
 If you use this code or build upon our work:
 

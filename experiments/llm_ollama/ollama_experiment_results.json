@@ -1,0 +1,50 @@
+{
+  "model": "llama3.2:latest",
+  "timestamp": "2025-07-21 16:22:54",
+  "experiments": {
+    "context_chunking": {
+      "full_context": {
+        "time": 2.9507999420166016,
+        "memory_delta": 0.390625,
+        "summary_length": 522
+      },
+      "chunked_context": {
+        "time": 54.09826302528381,
+        "memory_delta": 2.40625,
+        "summary_length": 1711,
+        "num_chunks": 122,
+        "chunk_size": 121
+      }
+    },
+    "streaming": {
+      "full_generation": {
+        "time": 4.14558482170105,
+        "memory_delta": 0.015625,
+        "response_length": 2816,
+        "estimated_tokens": 405
+      },
+      "streaming_generation": {
+        "time": 4.39975905418396,
+        "memory_delta": 0.046875,
+        "response_length": 2884,
+        "estimated_tokens": 406
+      }
+    },
+    "checkpointing": {
+      "no_checkpoint": {
+        "time": 40.478694915771484,
+        "memory_delta": 0.09375,
+        "total_responses": 10,
+        "avg_response_length": 2534.4
+      },
+      "with_checkpoint": {
+        "time": 43.547410011291504,
+        "memory_delta": 0.140625,
+        "total_responses": 10,
+        "avg_response_length": 2713.1,
+        "num_checkpoints": 4,
+        "checkpoint_interval": 3
+      }
+    }
+  }
+}
