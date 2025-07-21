@@ -76,6 +76,7 @@ python ollama_spacetime_experiment.py
 ### Prerequisites
 - Python 3.8+ (for Python experiments)
 - .NET Core SDK (for C# maze solver)
+- Ollama (optional, for real LLM experiments)
 - 2GB free memory for experiments
 
 ### Installation
@@ -97,18 +98,26 @@ streamlit run dashboard/app.py
 cd experiments/maze_solver && dotnet run && cd ../..
 cd experiments/checkpointed_sorting && python checkpointed_sort.py && cd ../..
 cd experiments/stream_processing && python sliding_window.py && cd ../..
+cd experiments/database_buffer_pool && python sqlite_heavy_experiment.py && cd ../..
+cd experiments/llm_kv_cache && python llm_kv_cache_experiment.py && cd ../..
+cd experiments/llm_ollama && python ollama_spacetime_experiment.py && cd ../..  # Requires Ollama
 ```
 
 ## Repository Structure
 
 ```
-├── experiments/           # Core experiments demonstrating tradeoffs
-│   ├── maze_solver/      # C# graph traversal with memory limits
-│   ├── checkpointed_sorting/  # Python external sorting
-│   └── stream_processing/     # Python sliding window vs full storage
-├── dashboard/            # Interactive Streamlit visualizations
-│   └── app.py           # 6-page interactive dashboard
-└── FINDINGS.md          # Verified experimental results
+├── experiments/                    # Core experiments demonstrating tradeoffs
+│   ├── maze_solver/               # C# graph traversal with memory limits
+│   ├── checkpointed_sorting/      # Python external sorting with O(√n) space
+│   ├── stream_processing/         # Python sliding window vs full storage
+│   ├── database_buffer_pool/      # SQLite experiments with different cache sizes
+│   ├── llm_kv_cache/             # Simulated LLM attention mechanism tradeoffs
+│   ├── llm_ollama/               # Real LLM experiments with Ollama models
+│   └── measurement_framework.py   # Shared profiling and analysis tools
+├── dashboard/                     # Interactive Streamlit visualizations
+│   ├── app.py                    # 6-page interactive dashboard
+│   └── requirements.txt          # Dashboard dependencies
+└── FINDINGS.md                   # Verified experimental results with statistical analysis
 ```
 
 ## Interactive Dashboard
